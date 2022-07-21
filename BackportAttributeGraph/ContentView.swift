@@ -23,8 +23,6 @@ struct ContentView: View {
 		"Ten"
 	]
 
-	@State private var selection: String?
-
 	var body: some View {
 		VStack {
 			Button("Present Sheet") {
