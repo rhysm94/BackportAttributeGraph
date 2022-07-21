@@ -27,25 +27,16 @@ struct ContentView: View {
 
 	var body: some View {
 		VStack {
-			Text("Hello, World!")
 			Button("Present Sheet") {
 				isPresentingSheet.toggle()
 			}
 		}
 		.padding()
 		.sheet(isPresented: $isPresentingSheet) {
-			NavigationView {
-				VStack(alignment: .leading) {
-					Text("Hello")
-
-					List(options, id: \.self, selection: $selection) {
-						Text($0)
-					}
+			VStack(alignment: .leading) {
+				List(options, id: \.self) {
+					Text($0)
 				}
-				.toolbar {
-					EditButton()
-				}
-				.navigationBarTitleDisplayMode(.inline)
 			}
 			.backport
 			.presentationDetents([.medium])
