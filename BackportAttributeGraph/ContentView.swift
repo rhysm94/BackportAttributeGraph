@@ -6,16 +6,55 @@
 //
 
 import SwiftUI
+import SwiftUIBackports
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
+	@State var isPresentingSheet = false
+	private let options = [
+		"One",
+		"Two",
+		"Three",
+		"Four",
+		"Five",
+		"Six",
+		"Seven",
+		"Eight",
+		"Nine",
+		"Ten"
+	]
+
+	@State private var selection: String?
+
+	var body: some View {
+		VStack {
+			Text("Hello, World!")
+			Button("Present Sheet") {
+				isPresentingSheet.toggle()
+			}
+		}
+		.padding()
+		.sheet(isPresented: $isPresentingSheet) {
+			NavigationView {
+				VStack(alignment: .leading) {
+					Text("Hello")
+
+					List(options, id: \.self, selection: $selection) {
+						Text($0)
+					}
+				}
+				.toolbar {
+					EditButton()
+				}
+				.navigationBarTitleDisplayMode(.inline)
+			}
+			.backport
+			.presentationDetents([.medium])
+		}
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+	static var previews: some View {
+		ContentView()
+	}
 }

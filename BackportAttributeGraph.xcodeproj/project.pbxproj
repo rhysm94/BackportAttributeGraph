@@ -11,6 +11,7 @@
 		91DC6E9D2889534200473CFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DC6E9C2889534200473CFE /* ContentView.swift */; };
 		91DC6E9F2889534300473CFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91DC6E9E2889534300473CFE /* Assets.xcassets */; };
 		91DC6EA22889534300473CFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91DC6EA12889534300473CFE /* Preview Assets.xcassets */; };
+		91DC6EAA2889564500473CFE /* SwiftUIBackports in Frameworks */ = {isa = PBXBuildFile; productRef = 91DC6EA92889564500473CFE /* SwiftUIBackports */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91DC6EAA2889564500473CFE /* SwiftUIBackports in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = BackportAttributeGraph;
+			packageProductDependencies = (
+				91DC6EA92889564500473CFE /* SwiftUIBackports */,
+			);
 			productName = BackportAttributeGraph;
 			productReference = 91DC6E972889534200473CFE /* BackportAttributeGraph.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 91DC6E8E2889534200473CFE;
+			packageReferences = (
+				91DC6EA82889564400473CFE /* XCRemoteSwiftPackageReference "SwiftUIBackports" */,
+			);
 			productRefGroup = 91DC6E982889534200473CFE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +347,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		91DC6EA82889564400473CFE /* XCRemoteSwiftPackageReference "SwiftUIBackports" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shaps80/SwiftUIBackports";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		91DC6EA92889564500473CFE /* SwiftUIBackports */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91DC6EA82889564400473CFE /* XCRemoteSwiftPackageReference "SwiftUIBackports" */;
+			productName = SwiftUIBackports;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 91DC6E8F2889534200473CFE /* Project object */;
 }
